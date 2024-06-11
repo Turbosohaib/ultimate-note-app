@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LeftSideBar } from "@/components/partials/leftsidebar";
+import Image from "next/image";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +14,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <section>
+          <div className="h-screen flex">
+            <LeftSideBar />
+            <div className="w-full">
+              {/* <Image src={Top_Img} className="w-full h-full max-h-[250px]" /> */}
+              <main>
+                {children}
+              </main>
+            </div>
+          </div>
+        </section>
+      </body>
     </html>
   );
 }

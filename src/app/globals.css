@@ -2,32 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+
+
+ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar {
+    width: 13px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar-track {
+    background: #f6f5f9;
+    /* Color of the track */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color of the handle */
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+    /* Optional: Border around the handle */
 }
