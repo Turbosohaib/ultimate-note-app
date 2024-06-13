@@ -3,26 +3,26 @@ import Profile_Img from "@/assets/images/profile.png"
 import Notification_Icon from "@/assets/icons/notify-icon.svg"
 import Search_Icon from "@/assets/icons/search-icon.svg"
 import Image from "next/image";
-// import { useState } from "react";
+
 
 
 
 export function LeftSideBar() {
-    // const [openNotifications, setNotification] = useState(false);
 
-    return <nav className="w-[400px] bg-[#f6f5f9] rounded-md mx-2 my-2">
+
+    return <nav className="w-[400px] bg-[#f2f2f2] shadow-lg rounded-md mx-2 my-2">
         <div className="relative pt-4 px-2 flex justify-between item-center tex-[17px]">
             <div className="flex item-center cursor-pointer">
                 <Image src={Profile_Img} className="w-[50px] h-[50px]  " />
 
                 <div className="ml-2 text-gray-700 text-[13px] py-[6px]">
-                    <div className="font-semibold">Umar Farooq</div>
-                    <div>turabi1988@gmail.com....</div>
+                    <div className="font-semibold text-[16px]">turabi1988@gmail.com</div>
+                    <div>turabi1988@gmail.com</div>
 
                 </div>
 
             </div>
-            <div className="cursor-pointer">
+            <div className="cursor-pointer mr-[24px] opacity-55">
                 <Image src={Notification_Icon} className="w-[30px] h-[50px]" />
             </div>
 
@@ -39,7 +39,7 @@ export function LeftSideBar() {
         </div>
         <div>
             <div className="flex items-center space-x-2 pl-[15px]">
-                <Link href="/note_btn" type="button" className="bg-[#00a82d] px-[70px] py-[10px] text-white rounded-[5px] flex items-center">
+                <button type="button" className="bg-[#00a82d] px-[70px] py-[10px] text-white rounded-[5px] flex items-center">
                     <svg
                         width="30"
                         height="26"
@@ -58,13 +58,13 @@ export function LeftSideBar() {
                         ></path>
                     </svg>
                     <span className="font-bold text-xl">Note</span>
-                </Link>
-                <button type="button" className="bg-gray-300 w-[64px] h-[45px] rounded-[5px]">
-                    <svg className="ml-[15px]" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M16 12c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm-2 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z" fill="currentColor"></path></svg>
+                </button>
+                <button type="button" className="bg-gray-300 p-[8px] rounded-[5px]">
+                    <svg width="32" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M16 12c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm-2 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z" fill="currentColor"></path></svg>
                 </button>
             </div>
-            <div className="py-[10px] items-center space-x-2 ml-[14px]">
-                <button id="taskButton" className="bg-[#a158eb] hover:bg-purple-700 text-white font-bold py-3 px-9 rounded">
+            <div className="py-[15px] ml-[14px] items-center space-x-2 ">
+                <button id="taskButton" className="bg-[#a158eb] hover:bg-purple-700 text-white font-bold py-3 px-7 rounded">
                     <svg width="30" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block">
                         <path d="M13.627 7.02h0c.287.227.332.64.1.922l-.1-.922zm0 0a.673.673 0 00-.934.097l-3.631 4.4L7.24 9.874a.673.673 0 00-.939.037l.091.086-.091-.086a.647.647 0 00.039.927l2.342 2.115s0 0 0 0a.673.673 0 00.966-.07s0 0 0 0l4.077-4.94-.1-.923zm3.76 4.155l.142.048.02-.149a7.625 7.625 0 10-5.374 6.236l.145-.043-.068-.133a4.222 4.222 0 01-.324-.855l-.033-.124-.123.035a6.438 6.438 0 114.61-5.349l-.016.128.128.013c.308.033.607.098.893.194z" fill="currentColor" stroke="currentColor" stroke-width=".25"></path>
                         <path d="M16.638 12.708a.625.625 0 10-1.25 0v1.904h-1.846a.625.625 0 100 1.25h1.846v1.846a.625.625 0 101.25 0v-1.846h1.904a.625.625 0 100-1.25h-1.904v-1.904z" fill="currentColor"></path>
@@ -83,7 +83,7 @@ export function LeftSideBar() {
 
 
         </div>
-        <div className="relative px-2 text-[#797578] ">
+        <div className="relative px-4 text-[#797578] ">
             <div className="sticky top-0 w-full">
                 <Link href="/" className="p-3 bg-[#e6e6e6] flex items-center space-x-2">
                     <svg width="30" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M3.91 9.905l-.782.876a.708.708 0 01-1.057-.944L8.181 3a2.375 2.375 0 013.543 0l6.109 6.837a.708.708 0 11-1.056.944l-.783-.876v5.303a2.292 2.292 0 01-2.292 2.292h-2.915v-4.455c0-.585-.423-.966-.835-.966s-.835.381-.835.966V17.5H6.202a2.292 2.292 0 01-2.292-2.292V9.905zm5.328-5.961a.958.958 0 011.43 0l4.076 4.562v6.702c0 .576-.467 1.042-1.042 1.042h-1.665v-3.205c0-1.172-.884-2.216-2.085-2.216-1.2 0-2.085 1.044-2.085 2.216v3.205H6.202a1.042 1.042 0 01-1.042-1.042V8.506l4.078-4.562z" fill="#737373"></path></svg>
@@ -150,7 +150,8 @@ export function LeftSideBar() {
         </div>
         <div>
             <button class="bg-[#fcb100] font-bold py-[12px] px-[100px] mt-[40px] rounded flex items-center space-x-2">
-                <svg width="35" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="7.083" fill="transparent"></circle><path fill-rule="evenodd" clipRule="evenodd" d="M19.5 12a7.5 7.5 0 10-15 0 7.5 7.5 0 0015 0zm-8.81 1.286v2.573c0 .194.135.336.322.4a.472.472 0 00.519-.145l3.26-3.933c.09-.11.123-.255.09-.392a.459.459 0 00-.26-.311l-1.406-.766V8.14c0-.195-.146-.335-.333-.399a.473.473 0 00-.52.146l-3.259 3.933a.45.45 0 00-.09.392.458.458 0 00.26.31l1.416.765z" fill="currentColor"></path></svg>                Upgrade
+                <svg width="35" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="7.083" fill="transparent"></circle><path fill-rule="evenodd" clipRule="evenodd" d="M19.5 12a7.5 7.5 0 10-15 0 7.5 7.5 0 0015 0zm-8.81 1.286v2.573c0 .194.135.336.322.4a.472.472 0 00.519-.145l3.26-3.933c.09-.11.123-.255.09-.392a.459.459 0 00-.26-.311l-1.406-.766V8.14c0-.195-.146-.335-.333-.399a.473.473 0 00-.52.146l-3.259 3.933a.45.45 0 00-.09.392.458.458 0 00.26.31l1.416.765z" fill="currentColor"></path></svg>
+                Upgrade
             </button>
 
             <button className="flex items-center space-x-2 mt-[25px] ml-[20px]">

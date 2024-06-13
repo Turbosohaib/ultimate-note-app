@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-[#f5f5f6]">
         <section>
           <div className="h-screen flex">
             <LeftSideBar />
