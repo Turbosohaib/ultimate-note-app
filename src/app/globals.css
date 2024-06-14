@@ -6,16 +6,16 @@
 
 
 
-ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar {
+#navigation::-webkit-scrollbar {
     width: 13px;
 }
 
-ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar-track {
-    background: #f6f5f9;
+#navigation::-webkit-scrollbar-track {
+    background: #f2f2f2;
     /* Color of the track */
 }
 
-ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar-thumb {
+#navigation::-webkit-scrollbar-thumb {
     background-color: #888;
     /* Color of the handle */
     border-radius: 6px;

@@ -1,45 +1,44 @@
 import Link from "next/link"
 import Profile_Img from "@/assets/images/profile.png"
 import Notification_Icon from "@/assets/icons/notify-icon.svg"
-import Search_Icon from "@/assets/icons/search-icon.svg"
 import Image from "next/image";
-// import { useState } from "react";
+import Search_Icon from "@/assets/icons/search-icon.svg"
+
 
 
 
 export function LeftSideBar() {
-    // const [openNotifications, setNotification] = useState(false);
 
-    return <nav className="w-[400px] bg-[#f6f5f9] rounded-md mx-2 my-2">
-        <div className="relative pt-4 px-2 flex justify-between item-center tex-[17px]">
+
+    return <nav className="w-[400px] bg-[#f2f2f2] shadow-lg rounded-md border border-solid border-gray-200 p-3 m-2">
+        <div className="relative pt-4 flex justify-between item-center text-[17px]">
             <div className="flex item-center cursor-pointer">
                 <Image src={Profile_Img} className="w-[50px] h-[50px]  " />
 
-                <div className="ml-2 text-gray-700 text-[13px] py-[6px]">
-                    <div className="font-semibold">Umar Farooq</div>
-                    <div>turabi1988@gmail.com....</div>
+                <div className="ml-[10px] text-gray-700 text-[13px] py-[6px]">
+                    <div className="font-semibold text-[16px]">turabi1988@gmail.com</div>
+                    <div>turabi1988@gmail.com</div>
 
                 </div>
 
             </div>
-            <div className="cursor-pointer">
+            <div className="cursor-pointer opacity-55">
                 <Image src={Notification_Icon} className="w-[30px] h-[50px]" />
             </div>
 
         </div>
 
-        <div className="w-full px-[15px] py-[15px] justify-center items-center">
+        <div className="w-full py-[15px] justify-center items-center">
             <div className="relative">
-                <input type="text" className="block  bg-gray-200 pl-10 pr-12 py-2 border rounded-md focus:outline-none" placeholder="Search" />
-                {/* <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <img src={Search_Icon} alt="" className="w-[20px] h-[20px] text-gray-400" />
-                </div> */}
+                <input type="text" className="px-12 bg-gray-200 w-full text-[16px] py-3 border rounded-md focus:outline-none" placeholder="Search" />
+                <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" opacity={0.5} viewBox="0 0 24 24" id="search"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                </div>
             </div>
-
         </div>
         <div>
-            <div className="flex items-center space-x-2 pl-[15px]">
-                <Link href="/note_btn" type="button" className="bg-[#00a82d] px-[70px] py-[10px] text-white rounded-[5px] flex items-center">
+            <div className="flex gap-2 items-center">
+                <button type="button" className="w-full bg-[#00a82d] px-[70px] py-[14px] text-white rounded-[5px] flex items-center">
                     <svg
                         width="30"
                         height="26"
@@ -58,13 +57,13 @@ export function LeftSideBar() {
                         ></path>
                     </svg>
                     <span className="font-bold text-xl">Note</span>
-                </Link>
-                <button type="button" className="bg-gray-300 w-[64px] h-[45px] rounded-[5px]">
-                    <svg className="ml-[15px]" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M16 12c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm-2 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z" fill="currentColor"></path></svg>
+                </button>
+                <button type="button" className="bg-gray-300 p-[12px] rounded-[5px]">
+                    <svg width="32" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M16 12c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm-2 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z" fill="currentColor"></path></svg>
                 </button>
             </div>
-            <div className="py-[10px] items-center space-x-2 ml-[14px]">
-                <button id="taskButton" className="bg-[#a158eb] hover:bg-purple-700 text-white font-bold py-3 px-9 rounded">
+            <div className="my-3 items-center flex gap-2">
+                <button id="taskButton" className="w-full bg-[#a158eb] hover:bg-purple-700 text-white font-bold py-3 px-7 rounded">
                     <svg width="30" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block">
                         <path d="M13.627 7.02h0c.287.227.332.64.1.922l-.1-.922zm0 0a.673.673 0 00-.934.097l-3.631 4.4L7.24 9.874a.673.673 0 00-.939.037l.091.086-.091-.086a.647.647 0 00.039.927l2.342 2.115s0 0 0 0a.673.673 0 00.966-.07s0 0 0 0l4.077-4.94-.1-.923zm3.76 4.155l.142.048.02-.149a7.625 7.625 0 10-5.374 6.236l.145-.043-.068-.133a4.222 4.222 0 01-.324-.855l-.033-.124-.123.035a6.438 6.438 0 114.61-5.349l-.016.128.128.013c.308.033.607.098.893.194z" fill="currentColor" stroke="currentColor" stroke-width=".25"></path>
                         <path d="M16.638 12.708a.625.625 0 10-1.25 0v1.904h-1.846a.625.625 0 100 1.25h1.846v1.846a.625.625 0 101.25 0v-1.846h1.904a.625.625 0 100-1.25h-1.904v-1.904z" fill="currentColor"></path>
@@ -72,7 +71,7 @@ export function LeftSideBar() {
                     <span className="text-xl">Task</span>
                 </button>
 
-                <button id="eventButton" className="bg-[#ee6631] hover:bg-orange-700 text-white font-bold py-3 px-7 rounded">
+                <button id="eventButton" className="w-full bg-[#ee6631] hover:bg-orange-700 text-white font-bold py-3 px-7 rounded">
                     <svg width="30" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block">
                         <path d="M14.75 4.265a.625.625 0 111.25 0v1.477h.792a2.292 2.292 0 012.291 2.292v5.53a4.598 4.598 0 00-1.25-.123V8.034c0-.575-.466-1.042-1.041-1.042H16v1.856a.625.625 0 11-1.25 0V6.992H9.252v1.856a.625.625 0 11-1.25 0V6.992h-.794c-.575 0-1.041.467-1.041 1.042v9.167c0 .575.466 1.041 1.041 1.041h6.225c.02.436.102.855.236 1.25h-6.46a2.292 2.292 0 01-2.292-2.291V8.034a2.292 2.292 0 012.291-2.292h.794V4.265a.625.625 0 111.25 0v1.477h5.498V4.265z" fill="currentColor"></path>
                         <path d="M9.543 12.41a.917.917 0 11-1.833 0 .917.917 0 011.833 0zM12.917 12.41a.917.917 0 11-1.834 0 .917.917 0 011.834 0zM15.375 13.326a.917.917 0 100-1.833.917.917 0 000 1.833zM9.543 15.784a.917.917 0 11-1.833 0 .917.917 0 011.833 0zM12 16.701a.917.917 0 100-1.833.917.917 0 000 1.833zM18.635 15.527a.625.625 0 10-1.25 0v1.904H15.54a.625.625 0 000 1.25h1.846v1.846a.625.625 0 001.25 0v-1.846h1.904a.625.625 0 000-1.25h-1.904v-1.904z" fill="currentColor"></path>
@@ -83,14 +82,14 @@ export function LeftSideBar() {
 
 
         </div>
-        <div className="relative px-2 text-[#797578] ">
+        <div className="relative text-[#797578] ">
             <div className="sticky top-0 w-full">
                 <Link href="/" className="p-3 bg-[#e6e6e6] flex items-center space-x-2">
                     <svg width="30" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M3.91 9.905l-.782.876a.708.708 0 01-1.057-.944L8.181 3a2.375 2.375 0 013.543 0l6.109 6.837a.708.708 0 11-1.056.944l-.783-.876v5.303a2.292 2.292 0 01-2.292 2.292h-2.915v-4.455c0-.585-.423-.966-.835-.966s-.835.381-.835.966V17.5H6.202a2.292 2.292 0 01-2.292-2.292V9.905zm5.328-5.961a.958.958 0 011.43 0l4.076 4.562v6.702c0 .576-.467 1.042-1.042 1.042h-1.665v-3.205c0-1.172-.884-2.216-2.085-2.216-1.2 0-2.085 1.044-2.085 2.216v3.205H6.202a1.042 1.042 0 01-1.042-1.042V8.506l4.078-4.562z" fill="#737373"></path></svg>
                     Home
                 </Link>
             </div>
-            <ul className="h-full max-h-[250px] space-y-0.5 overflow-auto">
+            <ul id="navigation" className="h-full max-h-[240px] space-y-0.5 overflow-auto">
                 <li>
                     <Link href="/shortcuts" className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2">
                         <svg width="30" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clipRule="evenodd" d="M8.236 7.604a.475.475 0 01-.4.303l-3.446.29c-.42.035-.59.582-.27.868l2.626 2.355c.135.12.194.31.153.49l-.803 3.52c-.097.428.348.767.706.537l2.952-1.886a.455.455 0 01.492 0l2.951 1.886c.36.23.804-.109.707-.537l-.803-3.52a.509.509 0 01.152-.49l2.627-2.355c.319-.286.15-.833-.27-.868l-3.447-.29a.475.475 0 01-.399-.303l-1.328-3.341a.465.465 0 00-.872 0L8.236 7.604zm4.516-.902l-1.153-2.9c-.58-1.458-2.619-1.458-3.198 0l-1.153 2.9-2.963.249c-1.607.135-2.064 2.091-1 3.045l2.298 2.06-.706 3.097c-.164.72.134 1.4.644 1.787a1.7 1.7 0 001.955.08L10 15.407l2.523 1.613a1.7 1.7 0 001.956-.08c.51-.388.808-1.066.644-1.787l-.706-3.097 2.298-2.06c1.064-.954.607-2.91-1-3.045l-2.963-.249z" fill="#737373"></path></svg>
@@ -149,12 +148,14 @@ export function LeftSideBar() {
 
         </div>
         <div>
-            <button class="bg-[#fcb100] font-bold py-[12px] px-[100px] mt-[40px] rounded flex items-center space-x-2">
-                <svg width="35" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="7.083" fill="transparent"></circle><path fill-rule="evenodd" clipRule="evenodd" d="M19.5 12a7.5 7.5 0 10-15 0 7.5 7.5 0 0015 0zm-8.81 1.286v2.573c0 .194.135.336.322.4a.472.472 0 00.519-.145l3.26-3.933c.09-.11.123-.255.09-.392a.459.459 0 00-.26-.311l-1.406-.766V8.14c0-.195-.146-.335-.333-.399a.473.473 0 00-.52.146l-3.259 3.933a.45.45 0 00-.09.392.458.458 0 00.26.31l1.416.765z" fill="currentColor"></path></svg>                Upgrade
+            <button class="bg-[#fcb100] font-bold py-[14px] w-full mt-[40px] rounded flex justify-center items-center">
+                <div className="flex gap-1 items-center"><svg width="35" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="7.083" fill="transparent"></circle><path fill-rule="evenodd" clipRule="evenodd" d="M19.5 12a7.5 7.5 0 10-15 0 7.5 7.5 0 0015 0zm-8.81 1.286v2.573c0 .194.135.336.322.4a.472.472 0 00.519-.145l3.26-3.933c.09-.11.123-.255.09-.392a.459.459 0 00-.26-.311l-1.406-.766V8.14c0-.195-.146-.335-.333-.399a.473.473 0 00-.52.146l-3.259 3.933a.45.45 0 00-.09.392.458.458 0 00.26.31l1.416.765z" fill="currentColor"></path></svg>
+                    <div>Upgrade</div>
+                </div>
             </button>
 
-            <button className="flex items-center space-x-2 mt-[25px] ml-[20px]">
-                <svg width="35" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="BEQrrBbCZXbrmiN8XKSP"><path d="M14.025 12.3l.105-.078c.864-.603 1.414-1.573 1.414-2.674A3.277 3.277 0 0012.27 6.27a3.271 3.271 0 00-3.264 3.203.175.175 0 01-.007.032v.001a.137.137 0 00-.008.04.818.818 0 001.636 0h.02c.002-.917.734-1.65 1.623-1.65.89 0 1.65.734 1.65 1.652 0 .524-.262.996-.681 1.31l-.131.08c-1.376.926-1.626 1.992-1.645 2.612l-.008.035v.001c-.005.016-.01.033-.01.05a.818.818 0 001.637 0c0-.497.341-.942.942-1.336zM13.265 16.656a1 1 0 11-2 0 1 1 0 012 0z" fill="#141414"></path><path fill-rule="evenodd" clipRule="evenodd" d="M12.265 19.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zm0 1.5a9 9 0 100-18 9 9 0 000 18z" fill="#141414"></path></svg>
+            <button className="flex my-4 items-center space-x-2">
+                <svg width="35" height="30" opacity="1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="BEQrrBbCZXbrmiN8XKSP"><path d="M14.025 12.3l.105-.078c.864-.603 1.414-1.573 1.414-2.674A3.277 3.277 0 0012.27 6.27a3.271 3.271 0 00-3.264 3.203.175.175 0 01-.007.032v.001a.137.137 0 00-.008.04.818.818 0 001.636 0h.02c.002-.917.734-1.65 1.623-1.65.89 0 1.65.734 1.65 1.652 0 .524-.262.996-.681 1.31l-.131.08c-1.376.926-1.626 1.992-1.645 2.612l-.008.035v.001c-.005.016-.01.033-.01.05a.818.818 0 001.637 0c0-.497.341-.942.942-1.336zM13.265 16.656a1 1 0 11-2 0 1 1 0 012 0z" fill="#141414"></path><path fill-rule="evenodd" clipRule="evenodd" d="M12.265 19.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zm0 1.5a9 9 0 100-18 9 9 0 000 18z" fill="#141414"></path></svg>
                 Need a little help?
             </button>
 
