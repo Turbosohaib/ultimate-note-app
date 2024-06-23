@@ -3,9 +3,9 @@ import Link from "next/link"
 
 export function FirstNoteBook() {
     return (
-        <div class="container mx-auto p-4">
-            <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-5 p-4">
+        <div className='py-2 px-2'>
+            <div className='grid grid-cols-12 gap-4'>
+                <div className='col-span-5 p-4'>
                     <div className='text-3xl font-semibold opacity-80'>First NoteBook</div>
                     <div className='flex justify-between items-center py-6 opacity-50'>
                         <div className='py-8 text-xl'>
@@ -53,7 +53,7 @@ export function FirstNoteBook() {
                         </div>
                     </div>
                 </div>
-                <div className='col-span-7 bg-white p-4 shadow-lg h-[740px]'>
+                <div className='col-span-7 bg-white p-4 shadow-lg h-[748px] rounded-md'>
 
                 </div>
             </div>
