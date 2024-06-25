@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 
-
-
-
 #navigation::-webkit-scrollbar {
     width: 13px;
 }
@@ -22,3 +19,4 @@
     border: 3px solid #f1f1f1;
     /* Optional: Border around the handle */
 }
+
