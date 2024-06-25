@@ -2,19 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar {
-  width: 13px;
+
+#navigation::-webkit-scrollbar {
+    width: 13px;
 }
 
-ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar-track {
-  background: #f6f5f9;
-  /* Color of the track */
+#navigation::-webkit-scrollbar-track {
+    background: #f2f2f2;
+    /* Color of the track */
 }
 
-ul.h-full.max-h-\[300px\].space-y-0\.5.overflow-auto::-webkit-scrollbar-thumb {
-  background-color: #888;
-  /* Color of the handle */
-  border-radius: 6px;
-  border: 3px solid #f1f1f1;
-  /* Optional: Border around the handle */
+#navigation::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color of the handle */
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+    /* Optional: Border around the handle */
 }
+
