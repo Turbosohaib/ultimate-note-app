@@ -5,17 +5,22 @@ import Notification_Icon from "@/assets/icons/notify-icon.svg";
 import Image from "next/image";
 import Search_Icon from "@/assets/icons/search-icon.svg";
 import { useState } from "react";
+import { EventBtn, MoreOptBtn, NoteBtn, TaskBtn } from "../sidebarbuttons";
+import { SideBarLink } from "./SideBarLink";
+import Home_icon from "@/assets/icons/home_icon.svg";
+import Shortcut_icon from "@/assets/icons/shortcut_icon.svg";
+import Notes_icon from "@/assets/icons/notes-icon.svg";
 
 export function LeftSideBar() {
   const [openSideBar, setOpenSideBar] = useState(false);
 
   return (
     <nav
-      className={`relative group transition-all duration-300 ${openSideBar ? "w-[120px]" : "w-[400px]"} flex flex-col justify-between bg-[#f2f2f2] shadow-lg rounded-md border border-solid border-gray-200 p-3 m-2`}
+      className={`relative group transition-all duration-500 ${openSideBar ? "w-[120px]" : "w-[400px]"} flex flex-col justify-between bg-[#f2f2f2] shadow-lg rounded-md border border-solid border-gray-200 p-3 m-2`}
     >
       <div>
         <div
-          className={`relative pt-4 flex transition-all duration ${openSideBar ? "justify-center" : "justify-between"} item-center text-[17px]`}
+          className={`relative pt-4 flex transition-all duration-500 ${openSideBar ? "justify-center" : "justify-between"} item-center text-[17px]`}
         >
           <div className="flex item-center cursor-pointer">
             <Image
@@ -25,7 +30,7 @@ export function LeftSideBar() {
             />
 
             <div
-              className={`ml-[10px] ${openSideBar ? "hidden" : ""} text-gray-700 text-[13px] py-[6px]`}
+              className={`ml-[10px] ${openSideBar ? "hidden" : ""} text-gray-500 text-[13px] py-[6px]`}
             >
               <div className="font-semibold text-[16px]">
                 turabi1988@gmail.com
@@ -52,7 +57,7 @@ export function LeftSideBar() {
               placeholder={`${openSideBar ? "" : "Search"} `}
             />
             <div
-              className={`absolute transition-all duration-300 inset-y-0 ${openSideBar ? "left-9" : "left-3"}  flex items-center pointer-events-none`}
+              className={`absolute transition-all duration-500 inset-y-0 ${openSideBar ? "left-9" : "left-3"}  flex items-center pointer-events-none`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,184 +77,47 @@ export function LeftSideBar() {
           <div
             className={` ${openSideBar ? "flex-col" : "flex-row"} flex gap-2 items-center`}
           >
-            <button
-              type="button"
-              className={`w-full bg-[#00a82d] ${openSideBar ? "justify-center" : "px-[70px]"}  py-[14px] text-white rounded-[5px] flex items-center`}
-            >
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="JbMdW6GX7GP1497Tk7hF"
-              >
-                <path
-                  d="M8.045 4.502a2.292 2.292 0 00-2.292 2.292V17.21a2.292 2.292 0 002.292 2.292h5.623a4.573 4.573 0 01-.237-1.352l-.099.102H8.045a1.042 1.042 0 01-1.042-1.042V6.794c0-.576.467-1.042 1.042-1.042h7.917c.575 0 1.041.466 1.041 1.042v6.775a4.595 4.595 0 011.25-.105v-6.67a2.292 2.292 0 00-2.291-2.292H8.045z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M15.33 8.803c0 .345-.28.625-.624.625H9.3a.625.625 0 110-1.25h5.405c.345 0 .625.28.625.625zM14.706 12.552a.625.625 0 100-1.25H9.3a.625.625 0 000 1.25h5.405zM10.968 15.677a.625.625 0 100-1.25H9.3a.625.625 0 100 1.25h1.667zM18.637 15.547a.625.625 0 00-1.25 0v1.904h-1.846a.625.625 0 000 1.25h1.846v1.846a.625.625 0 001.25 0v-1.846h1.904a.625.625 0 000-1.25h-1.904v-1.904z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-              <span
-                className={`font-bold text-xl ${openSideBar ? "hidden" : ""} `}
-              >
-                Note
-              </span>
-            </button>
-            <button
-              type="button"
-              className="w-full flex justify-center bg-gray-300 py-[12px] rounded-[5px]"
-            >
-              <svg
-                width="32"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M16 12c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zm-2 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </button>
+            <NoteBtn openSideBar={openSideBar} />
+            <MoreOptBtn />
           </div>
-          <div
-            className={`${openSideBar ? "hidden" : ""} my-3 items-center flex gap-2`}
-          >
-            <button
-              id="taskButton"
-              className="w-full bg-[#a158eb] hover:bg-purple-700 text-white font-bold py-3 px-7 rounded"
-            >
-              <svg
-                width="30"
-                height="26"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block"
-              >
-                <path
-                  d="M13.627 7.02h0c.287.227.332.64.1.922l-.1-.922zm0 0a.673.673 0 00-.934.097l-3.631 4.4L7.24 9.874a.673.673 0 00-.939.037l.091.086-.091-.086a.647.647 0 00.039.927l2.342 2.115s0 0 0 0a.673.673 0 00.966-.07s0 0 0 0l4.077-4.94-.1-.923zm3.76 4.155l.142.048.02-.149a7.625 7.625 0 10-5.374 6.236l.145-.043-.068-.133a4.222 4.222 0 01-.324-.855l-.033-.124-.123.035a6.438 6.438 0 114.61-5.349l-.016.128.128.013c.308.033.607.098.893.194z"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  strokeWidth=".25"
-                ></path>
-                <path
-                  d="M16.638 12.708a.625.625 0 10-1.25 0v1.904h-1.846a.625.625 0 100 1.25h1.846v1.846a.625.625 0 101.25 0v-1.846h1.904a.625.625 0 100-1.25h-1.904v-1.904z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-              <span className="text-xl">Task</span>
-            </button>
-
-            <button
-              id="eventButton"
-              className="w-full bg-[#ee6631] hover:bg-orange-700 text-white font-bold py-3 px-7 rounded"
-            >
-              <svg
-                width="30"
-                height="26"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block"
-              >
-                <path
-                  d="M14.75 4.265a.625.625 0 111.25 0v1.477h.792a2.292 2.292 0 012.291 2.292v5.53a4.598 4.598 0 00-1.25-.123V8.034c0-.575-.466-1.042-1.041-1.042H16v1.856a.625.625 0 11-1.25 0V6.992H9.252v1.856a.625.625 0 11-1.25 0V6.992h-.794c-.575 0-1.041.467-1.041 1.042v9.167c0 .575.466 1.041 1.041 1.041h6.225c.02.436.102.855.236 1.25h-6.46a2.292 2.292 0 01-2.292-2.291V8.034a2.292 2.292 0 012.291-2.292h.794V4.265a.625.625 0 111.25 0v1.477h5.498V4.265z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M9.543 12.41a.917.917 0 11-1.833 0 .917.917 0 011.833 0zM12.917 12.41a.917.917 0 11-1.834 0 .917.917 0 011.834 0zM15.375 13.326a.917.917 0 100-1.833.917.917 0 000 1.833zM9.543 15.784a.917.917 0 11-1.833 0 .917.917 0 011.833 0zM12 16.701a.917.917 0 100-1.833.917.917 0 000 1.833zM18.635 15.527a.625.625 0 10-1.25 0v1.904H15.54a.625.625 0 000 1.25h1.846v1.846a.625.625 0 001.25 0v-1.846h1.904a.625.625 0 000-1.25h-1.904v-1.904z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-              <span className="text-xl">Event</span>
-            </button>
+          <div className={`my-2 items-center flex gap-2`}>
+            <TaskBtn openSideBar={openSideBar} />
+            <EventBtn openSideBar={openSideBar} />
           </div>
         </div>
-        <div className="relative text-[#797578] ">
-          <div className="sticky top-0 w-full">
-            <Link
-              href="/"
-              className="p-3 bg-[#e6e6e6] flex items-center space-x-2"
-            >
-              <svg
-                width="30"
-                height="26"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M3.91 9.905l-.782.876a.708.708 0 01-1.057-.944L8.181 3a2.375 2.375 0 013.543 0l6.109 6.837a.708.708 0 11-1.056.944l-.783-.876v5.303a2.292 2.292 0 01-2.292 2.292h-2.915v-4.455c0-.585-.423-.966-.835-.966s-.835.381-.835.966V17.5H6.202a2.292 2.292 0 01-2.292-2.292V9.905zm5.328-5.961a.958.958 0 011.43 0l4.076 4.562v6.702c0 .576-.467 1.042-1.042 1.042h-1.665v-3.205c0-1.172-.884-2.216-2.085-2.216-1.2 0-2.085 1.044-2.085 2.216v3.205H6.202a1.042 1.042 0 01-1.042-1.042V8.506l4.078-4.562z"
-                  fill="#737373"
-                ></path>
-              </svg>
-              Home
-            </Link>
-          </div>
+        <div
+          className={`transition-all duration-300 relative text-[#797578] ${openSideBar ? "text-[0px]" : "text-[16px]"}  `}
+        >
+          <SideBarLink
+            link="/"
+            text="Home"
+            svg_Icon={Home_icon}
+            openSideBar={openSideBar}
+          />
           <ul
             id="navigation"
-            className="h-full max-h-[240px] space-y-0.5 overflow-auto"
+            className="w-full h-full max-h-[285px] flex flex-col gap-2 overflow-auto hover:overflow-y-visible overflow-y-hidden"
           >
-            <li>
-              <Link
-                href="/shortcuts"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
-              >
-                <svg
-                  width="30"
-                  height="26"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M8.236 7.604a.475.475 0 01-.4.303l-3.446.29c-.42.035-.59.582-.27.868l2.626 2.355c.135.12.194.31.153.49l-.803 3.52c-.097.428.348.767.706.537l2.952-1.886a.455.455 0 01.492 0l2.951 1.886c.36.23.804-.109.707-.537l-.803-3.52a.509.509 0 01.152-.49l2.627-2.355c.319-.286.15-.833-.27-.868l-3.447-.29a.475.475 0 01-.399-.303l-1.328-3.341a.465.465 0 00-.872 0L8.236 7.604zm4.516-.902l-1.153-2.9c-.58-1.458-2.619-1.458-3.198 0l-1.153 2.9-2.963.249c-1.607.135-2.064 2.091-1 3.045l2.298 2.06-.706 3.097c-.164.72.134 1.4.644 1.787a1.7 1.7 0 001.955.08L10 15.407l2.523 1.613a1.7 1.7 0 001.956-.08c.51-.388.808-1.066.644-1.787l-.706-3.097 2.298-2.06c1.064-.954.607-2.91-1-3.045l-2.963-.249z"
-                    fill="#737373"
-                  ></path>
-                </svg>
-                Shortcuts
-              </Link>
+            <li className="">
+              <SideBarLink
+                link="/shortcuts"
+                text="Shortcuts"
+                svg_Icon={Shortcut_icon}
+                openSideBar={openSideBar}
+              />
             </li>
             <li>
-              <Link
-                href="/notes"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
-              >
-                <svg
-                  width="30"
-                  height="26"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g fill="#737373">
-                    <path d="M12.702 7.426a.625.625 0 100-1.25H7.298a.625.625 0 000 1.25h5.404zM13.327 9.925c0 .345-.28.625-.625.625H7.298a.625.625 0 110-1.25h5.404c.345 0 .625.28.625.625zM8.964 13.675a.625.625 0 100-1.25H7.298a.625.625 0 100 1.25h1.666z"></path>
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M3.75 4.792A2.292 2.292 0 016.042 2.5h7.916a2.292 2.292 0 012.292 2.292v7.8c0 .517-.175 1.02-.497 1.425l-2.08 2.617a2.292 2.292 0 01-1.793.866H6.042a2.292 2.292 0 01-2.292-2.292V4.792zM6.042 3.75C5.466 3.75 5 4.216 5 4.792v10.416c0 .576.466 1.042 1.042 1.042h5.287v-3.195c0-.346.28-.625.625-.625H15V4.792c0-.576-.466-1.042-1.042-1.042H6.042zm6.653 12.106a1.043 1.043 0 01-.116.124v-2.3h1.845l-1.729 2.176z"
-                    ></path>
-                  </g>
-                </svg>
-                Notes
-              </Link>
+              <SideBarLink
+                link="/notes"
+                text="Notes"
+                svg_Icon={Notes_icon}
+                openSideBar={openSideBar}
+              />
             </li>
             <li>
               <Link
                 href="/tasks"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   width="30"
@@ -271,30 +139,38 @@ export function LeftSideBar() {
                     fill="#737373"
                   ></path>
                 </svg>
-                Tasks
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Tasks
+                </div>
               </Link>
             </li>
             <li>
               <Link
                 href="/files"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
-                  height="20"
+                  height="26"
                   viewBox="0 0 24 24"
                 >
                   <path d="M7.44 15.44a1.5 1.5 0 0 0 2.115 2.125L20.111 7.131a3 3 0 1 0-4.223-4.262L4.332 14.304a4.5 4.5 0 1 0 6.364 6.363l8.98-9.079.712.703-8.981 9.08a5.5 5.5 0 1 1-7.779-7.777L15.185 2.159a4 4 0 1 1 5.63 5.683L10.259 18.276a2.5 2.5 0 0 1-3.527-3.544l8-8 .707.707z" />
                   <path fill="none" d="M0 0h24v24H0z" />
                 </svg>
-                Files
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Files
+                </div>
               </Link>
             </li>
             <li>
               <Link
                 href="/calender"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -315,13 +191,17 @@ export function LeftSideBar() {
                     fill="#141414"
                   ></path>
                 </svg>
-                Calender
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Calender
+                </div>
               </Link>
             </li>
             <li>
               <Link
                 href="/notebooks"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   width="30"
@@ -335,13 +215,17 @@ export function LeftSideBar() {
                     <path d="M13.505 7.697a.75.75 0 01-.75.75h-3a.75.75 0 110-1.5h3a.75.75 0 01.75.75z"></path>
                   </g>
                 </svg>
-                Notebooks
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Notebooks
+                </div>
               </Link>
             </li>
             <li>
               <Link
                 href="/tags"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   width="30"
@@ -359,13 +243,17 @@ export function LeftSideBar() {
                     <path d="M11.667 8.338a1.667 1.667 0 11-3.334 0 1.667 1.667 0 013.334 0z"></path>
                   </g>
                 </svg>
-                Tags
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Tags
+                </div>
               </Link>
             </li>
             <li>
               <Link
                 href="/shared_with_me"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   width="30"
@@ -383,13 +271,17 @@ export function LeftSideBar() {
                     ></path>
                   </g>
                 </svg>
-                Shared with Me
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Shared with Me
+                </div>
               </Link>
             </li>
             <li>
               <Link
                 href="/trash"
-                className="p-3 hover:bg-[#e6e6e6] flex items-center space-x-2"
+                className={`p-3 hover:bg-[#e6e6e6] transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} flex gap-1 items-center`}
               >
                 <svg
                   width="30"
@@ -402,18 +294,24 @@ export function LeftSideBar() {
                     <path d="M5.171 7.091h9.656l-.455 8.251a2.292 2.292 0 01-2.288 2.166H7.933a2.292 2.292 0 01-2.288-2.16L5.17 7.09zm1.324 1.25l.398 6.935c.031.55.488.982 1.04.982h4.151c.553 0 1.01-.432 1.04-.985l.382-6.932h-7.01zM9.167 2.086a2.292 2.292 0 00-2.292 2.292v.205H3.75a.625.625 0 100 1.25h12.5a.625.625 0 100-1.25h-3.125v-.205a2.292 2.292 0 00-2.292-2.292H9.167zm2.708 2.497v-.205c0-.575-.466-1.042-1.042-1.042H9.167c-.576 0-1.042.467-1.042 1.042v.205h3.75z"></path>
                   </g>
                 </svg>
-                Trash
+                <div
+                  className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+                >
+                  Trash
+                </div>
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div>
-        <button className="bg-[#fcb100] font-bold py-[14px] w-full mt-[40px] rounded flex justify-center items-center">
-          <div className="flex gap-1 items-center">
+      <div className="">
+        <button className="bg-[#fcb100] py-[12px] font-bold w-full rounded flex justify-center items-center">
+          <div
+            className={`transition-all duration-300 flex gap-1 items-center`}
+          >
             <svg
               width="35"
-              height="27"
+              height="35"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -426,11 +324,16 @@ export function LeftSideBar() {
                 fill="currentColor"
               ></path>
             </svg>
-            <div>Upgrade</div>
+            <div
+              className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+            >
+              Upgrade
+            </div>
           </div>
         </button>
-
-        <button className="flex my-4 items-center space-x-2">
+        <button
+          className={`w-full my-4 flex gap-1 transition-all duration-700 ${openSideBar ? "justify-center" : "justify-start"} items-center`}
+        >
           <svg
             width="35"
             height="30"
@@ -451,33 +354,39 @@ export function LeftSideBar() {
               fill="#141414"
             ></path>
           </svg>
-          Need a little help?
+          <div
+            className={`text-wrap-nowrap transition-all duration-300 ${openSideBar ? "text-[0px]" : "text-[16px]"}`}
+          >
+            Need a little help?
+          </div>
         </button>
       </div>
       <div
         onClick={() => setOpenSideBar(!openSideBar)}
         className="absolute bottom-4 -right-4 cursor-pointer group-hover:opacity-100 group-hover:visible opacity-0 invisible transitiona-all duration-300 bg-gray-300 rounded-lg p-2 text-xl"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          id="left-arrow"
-          height={20}
-          width={20}
-        >
-          <g>
+        <div className={`${openSideBar ? "rotate-180" : ""}`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="left-arrow"
+            height={20}
+            width={20}
+          >
             <g>
-              <rect
-                width="24"
-                height="24"
-                opacity="0"
-                transform="rotate(90 12 12)"
-              ></rect>
-              <path d="M11.64 5.23a1 1 0 0 0-1.41.13l-5 6a1 1 0 0 0 0 1.27l4.83 6a1 1 0 0 0 .78.37 1 1 0 0 0 .78-1.63L7.29 12l4.48-5.37a1 1 0 0 0-.13-1.4z"></path>
-              <path d="M14.29 12l4.48-5.37a1 1 0 0 0-1.54-1.28l-5 6a1 1 0 0 0 0 1.27l4.83 6a1 1 0 0 0 .78.37 1 1 0 0 0 .78-1.63z"></path>
+              <g>
+                <rect
+                  width="24"
+                  height="24"
+                  opacity="0"
+                  transform="rotate(90 12 12)"
+                ></rect>
+                <path d="M11.64 5.23a1 1 0 0 0-1.41.13l-5 6a1 1 0 0 0 0 1.27l4.83 6a1 1 0 0 0 .78.37 1 1 0 0 0 .78-1.63L7.29 12l4.48-5.37a1 1 0 0 0-.13-1.4z"></path>
+                <path d="M14.29 12l4.48-5.37a1 1 0 0 0-1.54-1.28l-5 6a1 1 0 0 0 0 1.27l4.83 6a1 1 0 0 0 .78.37 1 1 0 0 0 .78-1.63z"></path>
+              </g>
             </g>
-          </g>
-        </svg>
+          </svg>
+        </div>
       </div>
     </nav>
   );
