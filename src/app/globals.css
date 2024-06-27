@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 #navigation::-webkit-scrollbar {
-    width: 13px;
+  width: 13px;
 }
 
 #navigation::-webkit-scrollbar-track {
-    background: #f2f2f2;
-    /* Color of the track */
+  background: #f2f2f2;
+  /* Color of the track */
 }
 
 #navigation::-webkit-scrollbar-thumb {
-    background-color: #888;
-    /* Color of the handle */
-    border-radius: 6px;
-    border: 3px solid #f1f1f1;
-    /* Optional: Border around the handle */
+  background-color: #888;
+  /* Color of the handle */
+  border-radius: 6px;
+  border: 3px solid #f1f1f1;
+  /* Optional: Border around the handle */
 }

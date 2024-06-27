@@ -11,15 +11,14 @@ export function Home() {
     }
 
     useEffect(() => {
-        const storedText = localStorage.getItem('scratchPadText');
+        const storedText = localStorage.getItem("scratchPadText");
         if (storedText) {
             setText(storedText);
         }
     }, []);
 
-
     useEffect(() => {
-        localStorage.setItem('scratchPadText', text);
+        localStorage.setItem("scratchPadText", text);
     }, [text]);
 
     const handleChange = (e) => {
@@ -128,5 +127,3 @@ export function Home() {
         </div>
     );
 }
-
-
