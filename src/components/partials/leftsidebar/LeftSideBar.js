@@ -10,7 +10,7 @@ import Search_Icon from "@/assets/icons/search-icon.svg"
 export function LeftSideBar() {
 
 
-    return <nav className="w-[400px] bg-[#f2f2f2] shadow-lg rounded-md border border-solid border-gray-200 p-3 m-2">
+    return <nav className="w-[400px] relative justify-between bg-[#f2f2f2] shadow-lg rounded-md border border-solid border-gray-200 p-3 m-2">
         <div className="relative pt-4 flex justify-between item-center text-[17px]">
             <div className="flex item-center cursor-pointer">
                 <Image src={Profile_Img} className="w-[50px] h-[50px]  " />
@@ -160,5 +160,6 @@ export function LeftSideBar() {
             </button>
 
         </div>
+
     </nav>
 }
