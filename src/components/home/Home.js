@@ -64,7 +64,7 @@ export function Home() {
                                         <div className='hover:bg-slate-200 p-1 rounded-md w-full'>
                                             <button>Create new notes</button>
                                         </div>
-                                        <div className='border-t border-t-2 border-gray-200 hover:bg-slate-200 p-1 rounded-md w-full'>
+                                        <div className='border-t border-gray-200 hover:bg-slate-200 p-1 rounded-md w-full'>
                                             <button>Remove widget</button>
                                         </div>
 
