@@ -1,4 +1,10 @@
+"use client";
+import { useState } from "react";
+import { CreateNewTask } from "./CreateNewTask";
+
 export function Tasks() {
+  const [newTaskPopUp, setNewTaskPopUp] = useState(false);
+
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold opacity-70">Tasks</h1>
@@ -6,7 +12,10 @@ export function Tasks() {
         <h1>0 Tasks</h1>
         <div className="flex gap-2 items-center">
           <div className="w-[220px]">
-            <button className="flex gap-1 font-bold text-[#a158eb]">
+            <button
+              onClick={() => setNewTaskPopUp(!newTaskPopUp)}
+              className="flex gap-1 font-bold text-[#bf8ef1]"
+            >
               <svg
                 width="28"
                 height="21"
@@ -28,6 +37,10 @@ export function Tasks() {
               </svg>
               New Task
             </button>
+            <CreateNewTask
+              newTaskPopUp={newTaskPopUp}
+              setNewTaskPopUp={setNewTaskPopUp}
+            />
           </div>
           <div className="cursor-pointer">
             <svg
