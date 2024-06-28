@@ -86,10 +86,22 @@ export function Tasks() {
           My tasks
           <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
         </h1>
-        <h1 className="">Notebooks</h1>
-        <h1 className="">Notes</h1>
-        <h1 className="">Today</h1>
-        <h1 className="">Assigned</h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Notebooks
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Notes
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Today
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Assigned
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
       </div>
       <div className="flex items-center justify-between  border-y border-solid border-gray-300 py-3 pl-5 pr-4">
         <h1 className="font-bold opacity-70">Title</h1>
