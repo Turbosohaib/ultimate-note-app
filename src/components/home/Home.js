@@ -57,7 +57,7 @@ export function Home() {
                             {notes && (
                                 <div className='absolute'>
                                     <div onClick={toggleNotes} className=''></div>
-                                    <div className='p-4 w-52  font-semibold shadow-lg bg-white absolute top-0 -right-14 rounded-sm opacity-80 '>
+                                    <div className='p-4 w-52  font-semibold shadow-lg bg-white absolute top-0 -right-14 rounded-sm opacity-70 '>
                                         <div className='hover:bg-slate-200 rounded-md cursor-pointer p-1 '>
                                             <button>Go to notes</button>
                                         </div>

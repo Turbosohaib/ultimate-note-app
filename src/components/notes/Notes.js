@@ -1,8 +1,22 @@
+"use client"
 import Link from "next/link";
+import { useState } from "react";
 
 
 
 export function Notes() {
+    const [sortoption, setSortOption] = useState(false);
+
+
+    const toggleSort = () => {
+        setSortOption(!sortoption);
+    };
+
+
+
+
+
+
     return (
         <div className="py-2 px-2">
             <div className="grid grid-cols-12 gap-4">
@@ -15,11 +29,60 @@ export function Notes() {
                             0 notes
                         </div>
                         <div className="flex space-x-2 ">
-                            <svg className="cursor-pointer" width="35" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mkStI0pYs1UYA2Z1eJ1_">
-                                <path d="M8.183 4.625a.625.625 0 00-1.25 0V17.87L5.067 16a.625.625 0 00-.884 0 .62.62 0 000 .88l2.933 2.94c.244.244.64.244.884 0l2.933-2.94a.62.62 0 000-.88.625.625 0 00-.884 0l-1.866 1.87V4.625zM11.625 5a.625.625 0 100 1.25h8.75a.625.625 0 100-1.25h-8.75zM11 9.375c0-.345.28-.625.625-.625h6.25a.625.625 0 110 1.25h-6.25A.625.625 0 0111 9.375zM11.625 12.5a.625.625 0 100 1.25h3.75a.625.625 0 100-1.25h-3.75z" fill="currentColor"></path>
-                            </svg>
-                            <svg className="cursor-pointer" width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="zQrLdeeT5zERyVoANWWh"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.898 6.933C3.958 5.747 4.803 4 6.316 4h11.368c1.513 0 2.358 1.747 1.417 2.933l-4.442 5.6v3.434c0 .688-.312 1.34-.847 1.774l-2.444 1.979c-.816.66-2.034.08-2.034-.97v-6.216L4.898 6.933zm1.418-1.688a.564.564 0 00-.442.915l4.705 5.94V18.751l.002.001.002.001.002-.001 2.444-1.979c.243-.197.385-.493.385-.806V12.1l4.712-5.94a.564.564 0 00-.442-.915H6.316z" fill="currentColor"></path></svg>
-                            <svg className="cursor-pointer" width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.375 8.925V5.25H6a.75.75 0 00-.75.75v2.925h7.125zm0 1.25H5.25v3.65h7.125v-3.65zm0 4.9H5.25V18c0 .414.336.75.75.75h6.375v-3.675zM6 20a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6zm7.625-14.75H18a.75.75 0 01.75.75v12a.75.75 0 01-.75.75h-4.375V5.25z" fill="currentColor"></path></svg>
+                            <div>
+                                <button
+                                    onClick={toggleSort}
+                                    type="button"
+                                    className="transition-all duration-300 hover:bg-gray-200 p-0.5 rounded-[5px]">
+                                    <svg className="cursor-pointer" width="35" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.183 4.625a.625.625 0 00-1.25 0V17.87L5.067 16a.625.625 0 00-.884 0 .62.62 0 000 .88l2.933 2.94c.244.244.64.244.884 0l2.933-2.94a.62.62 0 000-.88.625.625 0 00-.884 0l-1.866 1.87V4.625zM11.625 5a.625.625 0 100 1.25h8.75a.625.625 0 100-1.25h-8.75zM11 9.375c0-.345.28-.625.625-.625h6.25a.625.625 0 110 1.25h-6.25A.625.625 0 0111 9.375zM11.625 12.5a.625.625 0 100 1.25h3.75a.625.625 0 100-1.25h-3.75z" fill="currentColor"></path>
+                                    </svg>
+                                </button>
+                                {sortoption && (
+                                    <div className='absolute'>
+                                        <div onClick={toggleSort} className=''></div>
+                                        <div className='p-4 w-[250px]  font-semibold shadow-lg bg-white absolute top-0 left-0 right-0 '>
+                                            <div className="text-xs py-1">
+                                                SORT BY
+                                            </div>
+                                            <div className='hover:bg-slate-200 rounded-md cursor-pointer px-2 p-1 text-xl'>
+                                                <button>Title</button>
+                                            </div>
+                                            <div className='hover:bg-slate-200 rounded-md cursor-pointer px-2 p-1 text-xl text-[#6377ff] '>
+                                                <button className="flex gap-10">
+                                                    Date updated
+                                                    <svg className="hover:rotate-180 my-1" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 8.706 15.698" id="Down"><path d="m8 10.646-3.147 3.14V0h-1v13.786l-3.147-3.14-.706.708 4.353 4.344 4.353-4.344z" fill="#6377ff" class="color000000 svgShape"></path></svg>
+                                                </button>
+                                            </div>
+                                            <div className='hover:bg-slate-200  rounded-md cursor-pointer px-2 p-1 text-xl'>
+                                                <button>Date created</button>
+                                            </div>
+                                            <hr className="my-2" />
+                                            <div className='hover:bg-slate-200 rounded-md cursor-pointer px-2 p-1 text-xl'>
+                                                <button>Show notes in groups</button>
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+                                )}
+
+                            </div>
+                            <div>
+                                <button>
+                                    <svg className="cursor-pointer" width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="zQrLdeeT5zERyVoANWWh"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.898 6.933C3.958 5.747 4.803 4 6.316 4h11.368c1.513 0 2.358 1.747 1.417 2.933l-4.442 5.6v3.434c0 .688-.312 1.34-.847 1.774l-2.444 1.979c-.816.66-2.034.08-2.034-.97v-6.216L4.898 6.933zm1.418-1.688a.564.564 0 00-.442.915l4.705 5.94V18.751l.002.001.002.001.002-.001 2.444-1.979c.243-.197.385-.493.385-.806V12.1l4.712-5.94a.564.564 0 00-.442-.915H6.316z" fill="currentColor"></path></svg>
+
+                                </button>
+                            </div>
+                            <div>
+                                <button>
+                                    <svg className="cursor-pointer" width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.375 8.925V5.25H6a.75.75 0 00-.75.75v2.925h7.125zm0 1.25H5.25v3.65h7.125v-3.65zm0 4.9H5.25V18c0 .414.336.75.75.75h6.375v-3.675zM6 20a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6zm7.625-14.75H18a.75.75 0 01.75.75v12a.75.75 0 01-.75.75h-4.375V5.25z" fill="currentColor"></path></svg>
+
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                     <div className='py-28'>
