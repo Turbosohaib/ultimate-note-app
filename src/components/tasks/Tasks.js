@@ -1,4 +1,10 @@
+"use client";
+import { useState } from "react";
+import { CreateNewTask } from "./CreateNewTask";
+
 export function Tasks() {
+  const [newTaskPopUp, setNewTaskPopUp] = useState(false);
+
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold opacity-70">Tasks</h1>
@@ -6,7 +12,10 @@ export function Tasks() {
         <h1>0 Tasks</h1>
         <div className="flex gap-2 items-center">
           <div className="w-[220px]">
-            <button className="flex gap-1 font-bold text-[#a158eb]">
+            <button
+              onClick={() => setNewTaskPopUp(!newTaskPopUp)}
+              className="flex gap-1 font-bold text-[#bf8ef1]"
+            >
               <svg
                 width="28"
                 height="21"
@@ -28,6 +37,10 @@ export function Tasks() {
               </svg>
               New Task
             </button>
+            <CreateNewTask
+              newTaskPopUp={newTaskPopUp}
+              setNewTaskPopUp={setNewTaskPopUp}
+            />
           </div>
           <div className="cursor-pointer">
             <svg
@@ -86,10 +99,22 @@ export function Tasks() {
           My tasks
           <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
         </h1>
-        <h1 className="">Notebooks</h1>
-        <h1 className="">Notes</h1>
-        <h1 className="">Today</h1>
-        <h1 className="">Assigned</h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Notebooks
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Notes
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Today
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
+        <h1 className="cursor-pointer w-[120px] text-center hover:font-semibold group">
+          Assigned
+          <div className="group-hover:opacity-100 opacity-0 border-b-2 border-solid border-gray-400 h-2"></div>
+        </h1>
       </div>
       <div className="flex items-center justify-between  border-y border-solid border-gray-300 py-3 pl-5 pr-4">
         <h1 className="font-bold opacity-70">Title</h1>
