@@ -1,7 +1,12 @@
+import { useState } from "react";
+import { CreateEvent } from "./CreateEvent";
+
 export function EventBtn({ openSideBar }) {
+  const [newEventPopUp, setNewEventPopUp] = useState(false);
   return (
     <>
       <button
+        onClick={() => setNewEventPopUp(!newEventPopUp)}
         id="eventButton"
         className={`tranistion-all duration-500 ${openSideBar ? "h-0 text-[0px]" : "text-xl h-14 w-full px-7"}  bg-[#ee6631] hover:bg-orange-700 text-white font-bold rounded flex gap-1 items-center`}
       >
@@ -22,6 +27,10 @@ export function EventBtn({ openSideBar }) {
         </svg>
         <div>Event</div>
       </button>
+      <CreateEvent
+        newEventPopUp={newEventPopUp}
+        setNewEventPopUp={setNewEventPopUp}
+      />
     </>
   );
 }

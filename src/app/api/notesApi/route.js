@@ -17,13 +17,18 @@ export async function POST(req) {
     const note = {
       title: "",
       content: "",
-      createdAt: date / 1000,
-      modifiedAt: date / 1000,
+      createdAt: Math.floor(date / 1000),
+      modifiedAt: Math.floor(date / 1000),
     };
 
-    await collection.insertOne(note);
+    const noteCreated = await collection.insertOne(note);
 
-    return NextResponse.json({ date: date }, { status: 200 });
+    const allNotes = await collection.find({}).toArray();
+
+    return NextResponse.json(
+      { data: allNotes, insertedNote: noteCreated },
+      { status: 200 }
+    );
   } catch (err) {
     console.log(err);
     return NextResponse.json({ msg: "Error creating note" }, { status: 500 });
