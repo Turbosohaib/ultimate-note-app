@@ -3,7 +3,6 @@ import "./globals.css";
 import { LeftSideBar } from "@/components/partials/leftsidebar";
 import Image from "next/image";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,9 +19,7 @@ export default function RootLayout({ children }) {
             <LeftSideBar />
             <div className="w-full">
               {/* <Image src={Top_Img} className="w-full h-full max-h-[250px]" /> */}
-              <main>
-                {children}
-              </main>
+              <main className="h-full">{children}</main>
             </div>
           </div>
         </section>

@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export function FirstNoteBook() {
   return (
-    <div className="py-2 px-2">
-      <div className="grid grid-cols-12 gap-4">
+    <div className="py-2 px-2 h-full">
+      <div className="grid grid-cols-12 gap-4 h-full">
         <div className="col-span-5 p-4">
           <div className="text-3xl font-semibold opacity-80">
             First NoteBook
@@ -38,7 +38,6 @@ export function FirstNoteBook() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="zQrLdeeT5zERyVoANWWh"
                   >
                     <path
                       fillRule="evenodd"
@@ -127,7 +126,11 @@ export function FirstNoteBook() {
             </div>
           </div>
         </div>
-        <div className="col-span-7 bg-white p-4 shadow-lg h-[748px] rounded-md"></div>
+        <div className="col-span-7">
+          <div className="w-full h-full bg-white p-4 shadow-lg rounded-md">
+            asd
+          </div>
+        </div>
       </div>
     </div>
   );

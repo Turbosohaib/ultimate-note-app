@@ -103,20 +103,10 @@ export function Notes() {
 
                         </div>
                     </div>
-
-
                 </div>
-
-                <div className='col-span-7 bg-white shadow-lg h-[748px] rounded-md'>
-
+                <div className="col-span-7 bg-white shadow-lg h-[748px] rounded-md">
                 </div>
-
-
-
             </div>
-
-
         </div>
     );
 }
-
