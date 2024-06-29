@@ -40,8 +40,8 @@ export function Home() {
             <div class="grid grid-cols-3 gap-4">
 
 
-                <div class="col-span-1">
-                    <div className="mt-12 w-full max-w-[380px] flex justify-between items-center">
+                <div class="col-span-1 relative">
+                    <div className="mt-10 w-full max-w-[420px] flex justify-between items-center">
                         <button className="text-[22px] text-xl font-semibold opacity-80 hover:bg-gray-200 p-1 rounded-md ">Notes</button>
                         <div className='mt-3'>
                             <button>
@@ -55,16 +55,16 @@ export function Home() {
                                 </svg>
                             </button>
                             {notes && (
-                                <div className='popup'>
+                                <div className='absolute'>
                                     <div onClick={toggleNotes} className=''></div>
-                                    <div className='text-xxl font-semibold shadow-lg bg-white w-full h-full top-0 left-0 right-0 bottom-0 rounded-sm p-6 '>
-                                        <div className='hover:bg-slate-200 p-1 rounded-md w-full'>
+                                    <div className='p-4 w-52  font-semibold shadow-lg bg-white absolute top-0 -right-14 rounded-sm opacity-80 '>
+                                        <div className='hover:bg-slate-200 rounded-md cursor-pointer p-1 '>
                                             <button>Go to notes</button>
                                         </div>
-                                        <div className='hover:bg-slate-200 p-1 rounded-md w-full'>
+                                        <div className='hover:bg-slate-200  rounded-md cursor-pointer p-1 '>
                                             <button>Create new notes</button>
                                         </div>
-                                        <div className='border-t border-gray-200 hover:bg-slate-200 p-1 rounded-md w-full'>
+                                        <div className='border-t border-gray-200 hover:bg-slate-200 rounded-md cursor-pointer p-1'>
                                             <button>Remove widget</button>
                                         </div>
 
