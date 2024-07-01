@@ -1,7 +1,19 @@
+import axios from "axios";
+
 export function NoteBtn({ openSideBar }) {
+  async function CreateNote() {
+    try {
+      const result = await axios.post("/api/notesApi");
+      console.log("RESULT: ", result);
+    } catch (err) {
+      console.log("ERROR CREATING NOTE: ", err);
+    }
+  }
+
   return (
     <>
       <button
+        onClick={() => CreateNote()}
         type="button"
         className={`w-full transition-all duration-500 font-bold bg-[#00a82d] ${openSideBar ? "justify-center text-[0px]" : "text-xl px-[75px]"}  py-[14px] text-white rounded-[5px] flex gap-1 items-center`}
       >
